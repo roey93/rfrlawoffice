@@ -197,6 +197,22 @@
   .practice-card h3{color:var(--ivory); font-size:21px; margin-bottom:10px;}
   .practice-card p{color:rgba(250,247,239,0.68); font-size:14.5px;}
 
+  /* ARTICLES */
+  .article-card{
+    display:flex; flex-direction:column; gap:14px;
+    background:var(--ivory-2); border:1px solid var(--hairline);
+    padding:32px; max-width:520px; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .article-card:hover{transform:translateY(-3px); box-shadow:0 12px 28px rgba(14,27,51,0.08);}
+  .article-card .art-tag{font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); font-weight:600;}
+  .article-card h3{font-size:24px; margin-top:4px;}
+  .article-card p{color:var(--slate); font-size:14.5px;}
+  .article-card .read-more{
+    font-size:13.5px; font-weight:600; color:var(--navy-deep);
+    display:inline-flex; align-items:center; gap:6px; margin-top:6px;
+  }
+  .article-card:hover .read-more{color:var(--gold);}
+
   /* VALUES */
   .values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
   .value-card{text-align:center; padding:8px 12px;}
@@ -233,6 +249,7 @@
     <div class="navlinks">
       <a href="#tentang">Tentang</a>
       <a href="#praktik">Bidang Praktik</a>
+      <a href="#artikel">Artikel</a>
       <a href="#prinsip">Prinsip</a>
       <a href="#kontak">Kontak</a>
     </div>
@@ -323,6 +340,22 @@
         <p>Pendampingan dan pembelaan hukum sejak tahap penyidikan hingga proses persidangan.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="artikel">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Artikel</span>
+      <h2>Wawasan Hukum</h2>
+      <p>Catatan singkat seputar isu hukum yang relevan bagi individu maupun pelaku usaha.</p>
+    </div>
+    <a class="article-card reveal" href="artikel-1.html">
+      <span class="art-tag">Korporasi & Perdata</span>
+      <h3>Pentingnya Mitigasi Risiko Hukum Sebelum Melakukan Kerja Sama</h3>
+      <p>Sengketa bisnis yang paling sering terjadi bukan berasal dari kerja sama yang gagal secara bisnis, melainkan dari kerja sama yang tidak pernah dipersiapkan secara hukum sejak awal.</p>
+      <span class="read-more">Baca Selengkapnya →</span>
+    </a>
   </div>
 </section>
 
