@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pentingnya Mitigasi Risiko Hukum Sebelum Melakukan Kerja Sama — Roy Fernando, S.H.</title>
-<meta name="description" content="Mitigasi risiko hukum sebelum kerja sama bisnis bukan soal ketidakpercayaan, tapi bentuk kehati-hatian yang melindungi kedua belah pihak.">
+<title>Company Profile — Roy Fernando, S.H. & Rekan Law Office</title>
+<meta name="description" content="Company Profile Roy Fernando, S.H. & Rekan Law Office — profil advokat, visi misi, bidang layanan hukum, dan pendekatan kerja.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -135,6 +135,57 @@
     padding:20px 24px; font-size:14px; color:var(--slate); font-style:italic; margin-top:8px;
   }
 
+  /* ---------- PROFILE SECTIONS ---------- */
+  .profile-section{padding:64px 0;}
+  .profile-section.alt{background:var(--navy-deep); color:var(--ivory);}
+  .profile-section.alt .eyebrow{color:var(--gold-light);}
+  .profile-section.alt h2{color:var(--ivory);}
+  .profile-section.alt p{color:rgba(250,247,239,0.75);}
+  .p-head{max-width:640px; margin-bottom:40px;}
+  .p-head h2{font-size:clamp(26px,3.4vw,34px); margin-top:10px;}
+  .p-head p{color:var(--slate); margin-top:12px; font-size:15.5px;}
+
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  @media (max-width:760px){ .two-col{grid-template-columns:1fr;} }
+  .vm-card h3{font-size:22px; margin-bottom:12px; color:var(--gold-light);}
+  .vm-card p{font-size:15px; line-height:1.7; color:rgba(250,247,239,0.82);}
+  .vm-card ul{margin-top:10px; padding-left:0; list-style:none;}
+  .vm-card ul li{font-size:14.5px; color:rgba(250,247,239,0.78); margin-bottom:10px; padding-left:22px; position:relative;}
+  .vm-card ul li::before{content:''; position:absolute; left:0; top:8px; width:7px; height:7px; border:1px solid var(--gold-light); border-radius:50%;}
+
+  .credentials-row{display:flex; gap:40px; flex-wrap:wrap; margin-top:8px;}
+  .cred-item .cred-label{font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--slate);}
+  .cred-item .cred-value{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:19px; color:var(--navy-deep); margin-top:4px;}
+
+  .service-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:8px;}
+  .service-card{background:var(--ivory); padding:26px 24px; border:1px solid var(--hairline);}
+  .service-card .mark{color:var(--gold); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; display:block; margin-bottom:10px;}
+  .service-card h3{font-size:19px; margin-bottom:8px;}
+  .service-card p{font-size:13.5px; color:var(--slate);}
+
+  .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:32px; margin-top:8px;}
+  .step{position:relative; padding-left:52px;}
+  .step .num{
+    position:absolute; left:0; top:0; width:38px; height:38px; border-radius:50%;
+    border:1px solid var(--gold); color:var(--gold); font-family:'Cormorant Garamond',serif; font-weight:700; font-size:17px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .step h3{font-size:18px; margin-bottom:6px;}
+  .step p{font-size:14px; color:var(--slate);}
+
+  .principles-row{display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:8px;}
+  @media (max-width:700px){ .principles-row{grid-template-columns:1fr;} }
+  .principle-item{text-align:center;}
+  .principle-item .medallion{display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:14px;}
+  .principle-item .medallion .line{width:40px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+  .principle-item .medallion .dot{width:6px; height:6px; border-radius:50%; border:1px solid var(--gold);}
+  .principle-item h3{font-size:19px; margin-bottom:6px;}
+  .principle-item p{font-size:13.5px; color:var(--slate);}
+
+  .download-row{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:24px;}
+  .btn-outline{border:1px solid var(--gold-light); color:var(--gold-light);}
+  .btn-outline:hover{background:var(--gold-light); color:var(--navy-deep);}
+
   /* ---------- CTA ---------- */
   .cta-band{
     background:var(--navy-deep); color:var(--ivory); padding:56px 0; text-align:center; margin-top:56px;
@@ -167,8 +218,8 @@
     <div class="navlinks">
       <a href="index.html#tentang">Tentang</a>
       <a href="index.html#praktik">Bidang Praktik</a>
-      <a href="index.html#artikel" class="active">Artikel</a>
-      <a href="company-profile.html">Company Profile</a>
+      <a href="index.html#artikel">Artikel</a>
+      <a href="company-profile.html" class="active">Company Profile</a>
       <a href="index.html#kontak">Kontak</a>
     </div>
     <a class="nav-cta" href="index.html#kontak">Konsultasi</a>
@@ -177,68 +228,173 @@
 
 <section class="art-hero">
   <div class="wrap">
-    <div class="breadcrumb reveal"><a href="index.html">Beranda</a> &nbsp;/&nbsp; <a href="index.html#artikel">Artikel</a> &nbsp;/&nbsp; Mitigasi Risiko Hukum</div>
-    <span class="eyebrow reveal">Artikel Hukum — Korporasi &amp; Perdata</span>
-    <h1 class="reveal">Pentingnya Mitigasi Risiko Hukum Sebelum Melakukan Kerja Sama</h1>
+    <div class="breadcrumb reveal"><a href="index.html">Beranda</a> &nbsp;/&nbsp; Company Profile</div>
+    <span class="eyebrow reveal">Company Profile</span>
+    <h1 class="reveal">Roy Fernando, S.H. &amp; Rekan Law Office</h1>
     <div class="art-meta reveal">
-      <span>Roy Fernando, S.H.</span>
+      <span>Advokat & Konsultan Hukum</span>
       <span class="dot"></span>
-      <span>Waktu baca ± 5 menit</span>
+      <span>Integritas · Profesional · Solusi</span>
     </div>
   </div>
 </section>
 
-<article>
-  <div class="read reveal">
-    <p class="lede">Sebelum menandatangani kerja sama bisnis — baik dengan mitra dagang, investor, vendor, maupun rekan usaha — banyak pelaku bisnis tergoda untuk segera &ldquo;jalan dulu&rdquo; dan menyelesaikan aspek hukum belakangan.</p>
-
-    <p>Padahal, sengketa bisnis yang paling sering ditangani di meja hukum bukan berasal dari kerja sama yang gagal secara bisnis, melainkan dari kerja sama yang <strong>tidak pernah dipersiapkan secara hukum sejak awal</strong>.</p>
-
-    <p>Mitigasi risiko hukum bukan soal ketidakpercayaan pada mitra, melainkan bentuk kehati-hatian yang melindungi kedua belah pihak ketika hal-hal tidak berjalan sesuai rencana.</p>
-
-    <h2>Mengapa Mitigasi Risiko Hukum Penting?</h2>
-    <p>Sebuah kerja sama, sekecil apa pun, pada dasarnya adalah perjanjian yang menimbulkan hak dan kewajiban. Berdasarkan <strong>Pasal 1338 KUH Perdata</strong>, setiap perjanjian yang dibuat secara sah berlaku sebagai undang-undang bagi para pihak yang membuatnya. Artinya, begitu kerja sama disepakati &mdash; bahkan secara lisan &mdash; hukum akan memandangnya sebagai komitmen yang mengikat.</p>
-    <p>Masalahnya, banyak kerja sama dijalankan tanpa dokumen yang jelas, atau dengan dokumen yang disusun terburu-buru tanpa mempertimbangkan skenario terburuk. Ketika terjadi wanprestasi, perbedaan penafsiran, atau perselisihan kepentingan, pihak yang tidak melakukan mitigasi sejak awal biasanya berada pada posisi yang jauh lebih lemah secara hukum.</p>
-
-    <h2>Empat Area yang Wajib Diperiksa Sebelum Kerja Sama</h2>
-
-    <h3>1. Legalitas dan Kapasitas Hukum Mitra</h3>
-    <p>Sebelum menandatangani apa pun, pastikan pihak yang diajak kerja sama memang berwenang mewakili perusahaan atau dirinya sendiri. Sesuai <strong>Pasal 1320 KUH Perdata</strong>, salah satu syarat sahnya perjanjian adalah kecakapan para pihak untuk membuat suatu perikatan. Kerja sama dengan pihak yang ternyata tidak berwenang &mdash; misalnya karyawan yang bertindak tanpa kuasa dari perusahaan &mdash; berisiko membuat perjanjian tidak dapat dipertahankan secara hukum.</p>
-    <p>Langkah praktis: minta salinan akta pendirian, susunan pengurus, dan &mdash; jika relevan &mdash; surat kuasa dari pihak yang menandatangani.</p>
-
-    <h3>2. Kejelasan Objek dan Ruang Lingkup Kerja Sama</h3>
-    <p>Banyak sengketa muncul bukan karena itikad buruk, tetapi karena kedua pihak sejak awal memiliki pemahaman yang berbeda tentang apa yang sebenarnya disepakati. Ruang lingkup pekerjaan, target, tenggat waktu, dan standar kualitas harus dituangkan secara spesifik &mdash; bukan sekadar disampaikan lisan atau tersirat dari percakapan informal.</p>
-
-    <h3>3. Klausul Perlindungan dalam Perjanjian</h3>
-    <p>Perjanjian yang baik memuat klausul yang mengantisipasi kemungkinan hal-hal tidak berjalan lancar, di antaranya:</p>
-    <ul>
-      <li><strong>Klausul wanprestasi</strong> — konsekuensi jika salah satu pihak tidak memenuhi kewajiban</li>
-      <li><strong>Klausul kerahasiaan (NDA)</strong> — melindungi informasi sensitif yang dipertukarkan selama kerja sama</li>
-      <li><strong>Klausul penyelesaian sengketa</strong> — menentukan forum penyelesaian, apakah musyawarah, mediasi, arbitrase, atau pengadilan</li>
-      <li><strong>Klausul pemutusan kerja sama</strong> — mekanisme dan konsekuensi jika kerja sama diakhiri lebih awal</li>
-      <li><strong>Klausul force majeure</strong> — pembagian risiko atas kejadian di luar kendali para pihak</li>
-    </ul>
-    <p>Tanpa klausul-klausul ini, penyelesaian sengketa akan sepenuhnya bergantung pada ketentuan umum hukum perdata yang belum tentu mencerminkan kesepakatan awal para pihak.</p>
-
-    <h3>4. Due Diligence Sederhana</h3>
-    <p>Untuk kerja sama bernilai signifikan, pemeriksaan awal (due diligence) terhadap rekam jejak, kondisi keuangan, dan potensi sengketa yang sedang berjalan dari calon mitra dapat mencegah kerugian yang jauh lebih besar di kemudian hari. Due diligence tidak harus rumit — pemeriksaan dasar terhadap legalitas usaha dan reputasi bisnis sudah dapat mengurangi risiko secara signifikan.</p>
-
-    <h2>Konsekuensi Mengabaikan Mitigasi Risiko</h2>
-    <p>Ketika sengketa terjadi tanpa dasar perjanjian yang memadai, pihak yang dirugikan seringkali harus menempuh gugatan <strong>wanprestasi</strong> atau <strong>perbuatan melawan hukum</strong> (Pasal 1365 KUH Perdata) &mdash; proses yang memakan waktu, biaya, dan energi jauh lebih besar dibanding biaya menyusun perjanjian yang baik sejak awal. Dalam banyak kasus, tanpa dokumen pendukung yang jelas, pembuktian di pengadilan menjadi jauh lebih sulit.</p>
-
-    <h2>Penutup</h2>
-    <p>Mitigasi risiko hukum bukan penghambat kecepatan bisnis, melainkan investasi yang melindungi kelangsungan kerja sama itu sendiri. Melibatkan konsultan hukum sejak tahap negosiasi &mdash; bukan setelah masalah muncul &mdash; memungkinkan perjanjian disusun secara preventif, bukan reaktif.</p>
-
-    <hr class="divider">
-    <p class="disclaimer">Artikel ini bersifat umum sebagai bahan edukasi dan tidak merupakan nasihat hukum untuk kasus tertentu. Setiap kerja sama memiliki karakteristik dan risiko yang berbeda, sehingga konsultasi langsung dengan advokat sangat disarankan sebelum menandatangani perjanjian.</p>
+<section class="profile-section">
+  <div class="wrap">
+    <div class="p-head reveal">
+      <span class="eyebrow">Profil Singkat</span>
+      <h2>Tentang Kantor Kami</h2>
+      <p>Gambaran umum tentang identitas, cakupan layanan, dan pendekatan kerja kami dalam menangani perkara hukum.</p>
+    </div>
+    <div class="two-col reveal">
+      <div>
+        <p style="font-size:16px; margin-bottom:16px;">Roy Fernando, S.H. &amp; Rekan Law Office adalah praktik hukum yang menangani perkara litigasi dan non-litigasi di berbagai bidang, termasuk hukum perdata, ketenagakerjaan, korporasi, dan pidana.</p>
+        <p style="font-size:16px;">Kami mengedepankan pendekatan yang cermat dan berbasis analisis hukum yang mendalam, dengan komunikasi yang transparan kepada setiap klien sejak konsultasi awal hingga penyelesaian perkara.</p>
+      </div>
+      <div class="credentials-row">
+        <div class="cred-item">
+          <div class="cred-label">Pendidikan</div>
+          <div class="cred-value">S.H. — Universitas Esa Unggul</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-label">Keanggotaan</div>
+          <div class="cred-value">DPN Indonesia</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-label">Fokus Praktik</div>
+          <div class="cred-value">Litigasi &amp; Non-Litigasi</div>
+        </div>
+      </div>
+    </div>
   </div>
-</article>
+</section>
+
+<section class="profile-section alt">
+  <div class="wrap">
+    <div class="p-head reveal">
+      <span class="eyebrow">Visi &amp; Misi</span>
+      <h2>Arah dan Komitmen Kami</h2>
+    </div>
+    <div class="two-col reveal">
+      <div class="vm-card">
+        <h3>Visi</h3>
+        <p>Menjadi mitra hukum tepercaya bagi individu dan pelaku usaha dalam menghadapi persoalan hukum, melalui pendekatan yang profesional, berintegritas, dan berorientasi pada solusi.</p>
+      </div>
+      <div class="vm-card">
+        <h3>Misi</h3>
+        <ul>
+          <li>Memberikan pendampingan hukum yang cermat dan berbasis analisis mendalam</li>
+          <li>Membangun komunikasi yang transparan dan mudah dipahami oleh klien</li>
+          <li>Menjunjung tinggi kode etik profesi advokat dalam setiap penanganan perkara</li>
+          <li>Mengutamakan penyelesaian yang efisien, baik melalui jalur litigasi maupun non-litigasi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profile-section">
+  <div class="wrap">
+    <div class="p-head reveal">
+      <span class="eyebrow">Bidang Layanan</span>
+      <h2>Ruang Lingkup Layanan Hukum</h2>
+      <p>Pendampingan hukum yang disesuaikan dengan karakter dan kebutuhan setiap perkara.</p>
+    </div>
+    <div class="service-grid reveal">
+      <div class="service-card">
+        <span class="mark">Litigasi</span>
+        <h3>Litigasi &amp; Non-Litigasi</h3>
+        <p>Pendampingan persidangan di berbagai tingkat pengadilan, serta penyelesaian sengketa melalui negosiasi dan mediasi.</p>
+      </div>
+      <div class="service-card">
+        <span class="mark">Industrial</span>
+        <h3>Ketenagakerjaan</h3>
+        <p>Perselisihan hubungan industrial, PHK, hak pekerja, hingga proses di Pengadilan Hubungan Industrial.</p>
+      </div>
+      <div class="service-card">
+        <span class="mark">Keperdataan</span>
+        <h3>Perdata Umum &amp; Khusus</h3>
+        <p>Sengketa kontrak, wanprestasi, perbuatan melawan hukum, serta perkara pertanahan.</p>
+      </div>
+      <div class="service-card">
+        <span class="mark">Bisnis</span>
+        <h3>Korporasi</h3>
+        <p>Legalitas usaha, penyusunan dan tinjauan kontrak bisnis, serta konsultasi hukum korporasi.</p>
+      </div>
+      <div class="service-card">
+        <span class="mark">Pidana</span>
+        <h3>Hukum Pidana</h3>
+        <p>Pendampingan dan pembelaan hukum sejak tahap penyidikan hingga persidangan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profile-section alt">
+  <div class="wrap">
+    <div class="p-head reveal">
+      <span class="eyebrow">Pendekatan Kerja</span>
+      <h2>Bagaimana Kami Menangani Setiap Perkara</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="num">1</span>
+        <h3 style="color:var(--gold-light);">Konsultasi &amp; Pemetaan Masalah</h3>
+        <p style="color:rgba(250,247,239,0.72);">Memahami duduk perkara secara menyeluruh dari sudut pandang klien sejak awal.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3 style="color:var(--gold-light);">Analisis Hukum &amp; Strategi</h3>
+        <p style="color:rgba(250,247,239,0.72);">Menyusun dasar hukum dan opsi strategi yang paling sesuai dengan tujuan klien.</p>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <h3 style="color:var(--gold-light);">Eksekusi</h3>
+        <p style="color:rgba(250,247,239,0.72);">Menjalankan strategi melalui negosiasi, mediasi, atau proses persidangan.</p>
+      </div>
+      <div class="step">
+        <span class="num">4</span>
+        <h3 style="color:var(--gold-light);">Pendampingan hingga Selesai</h3>
+        <p style="color:rgba(250,247,239,0.72);">Mengawal perkara secara konsisten hingga mencapai penyelesaian.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="profile-section">
+  <div class="wrap">
+    <div class="p-head reveal" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <span class="eyebrow">Prinsip Kerja</span>
+      <h2>Yang Menjadi Pegangan Kami</h2>
+    </div>
+    <div class="principles-row reveal">
+      <div class="principle-item">
+        <div class="medallion"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+        <h3>Integritas</h3>
+        <p>Setiap perkara ditangani dengan kejujuran dan tanggung jawab penuh terhadap kepercayaan klien.</p>
+      </div>
+      <div class="principle-item">
+        <div class="medallion"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+        <h3>Profesional</h3>
+        <p>Analisis hukum yang cermat, komunikasi yang jelas, dan proses kerja yang tertib administrasi.</p>
+      </div>
+      <div class="principle-item">
+        <div class="medallion"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+        <h3>Solusi</h3>
+        <p>Berorientasi pada penyelesaian yang realistis dan sesuai dengan kepentingan klien.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="cta-band">
   <div class="wrap">
-    <h2>Butuh Pendampingan Hukum untuk Kerja Sama Bisnis Anda?</h2>
-    <p>Konsultasikan draf perjanjian atau rencana kerja sama Anda sebelum ditandatangani, agar risiko dapat diantisipasi sejak awal.</p>
-    <a class="btn btn-primary" href="https://wa.me/6281399999176" target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
+    <h2>Ingin Salinan Company Profile Kami?</h2>
+    <p>Unduh versi PDF untuk keperluan referensi, presentasi internal, atau dilampirkan pada proposal kerja sama.</p>
+    <div class="download-row">
+      <a class="btn btn-primary" href="company-profile.pdf" download>Unduh PDF Company Profile</a>
+      <a class="btn btn-outline" href="https://wa.me/6281399999176" target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
+    </div>
   </div>
 </section>
 
