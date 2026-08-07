@@ -7,17 +7,21 @@
 <meta name="description" content="Roy Fernando, S.H. — Advokat & Konsultan Hukum di Jakarta. Pendampingan hukum litigasi dan non-litigasi: perdata, ketenagakerjaan (PHI), korporasi, dan pidana.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Roy Fernando, S.H.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://rfrlawoffice.my.id/">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Roy Fernando, S.H. — Advokat & Konsultan Hukum">
 <meta property="og:description" content="Roy Fernando, S.H. — Advokat & Konsultan Hukum di Jakarta. Pendampingan hukum litigasi dan non-litigasi: perdata, ketenagakerjaan (PHI), korporasi, dan pidana.">
 <meta property="og:url" content="https://rfrlawoffice.my.id/">
+<meta property="og:image" content="https://rfrlawoffice.my.id/og-image.jpg">
 <meta property="og:site_name" content="Roy Fernando, S.H. &amp; Rekan Law Office">
 <meta property="og:locale" content="id_ID">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Roy Fernando, S.H. — Advokat & Konsultan Hukum">
+<meta name="twitter:image" content="https://rfrlawoffice.my.id/og-image.jpg">
 <meta name="twitter:description" content="Roy Fernando, S.H. — Advokat & Konsultan Hukum di Jakarta. Pendampingan hukum litigasi dan non-litigasi: perdata, ketenagakerjaan (PHI), korporasi, dan pidana.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -211,6 +215,8 @@
   .practice-card .mark{color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:15px; font-style:italic; margin-bottom:18px; display:block;}
   .practice-card h3{color:var(--ivory); font-size:21px; margin-bottom:10px;}
   .practice-card p{color:rgba(250,247,239,0.68); font-size:14.5px;}
+  .practice-card .prac-more{display:inline-block; margin-top:14px; font-size:13px; font-weight:600; color:var(--gold-light); opacity:.85;}
+  .practice-card:hover .prac-more{opacity:1;}
 
   /* ARTICLES */
   .article-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:28px;}
@@ -279,6 +285,33 @@
   @media (prefers-reduced-motion: reduce){
     .wa-float, .wa-float .wa-label{transition:none;}
   }
+
+  /* ---------- CONSULTATION FORM ---------- */
+  .form-wrap{margin-top:36px; background:var(--ivory-2); border:1px solid var(--hairline); padding:38px 34px;}
+  .form-wrap h3{font-size:24px; margin-bottom:6px;}
+  .form-wrap .form-sub{color:var(--slate); font-size:14.5px; margin-bottom:26px;}
+  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:700px){ .form-grid{grid-template-columns:1fr;} }
+  .field{display:flex; flex-direction:column; gap:6px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-size:12.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--slate); font-weight:600;}
+  .field input, .field select, .field textarea{
+    font-family:'Inter',sans-serif; font-size:15px; color:var(--ink);
+    background:var(--ivory); border:1px solid rgba(28,28,28,0.15); border-radius:2px;
+    padding:12px 14px; width:100%;
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field textarea{min-height:130px; resize:vertical;}
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,162,39,0.15);
+  }
+  .form-actions{display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin-top:22px;}
+  .form-note{font-size:12.5px; color:var(--slate); font-style:italic; max-width:420px;}
+  button.btn{font-family:'Inter',sans-serif; border:none;}
+  .form-status{margin-top:16px; font-size:14px; display:none;}
+  .form-status.show{display:block;}
+  .form-status.ok{color:#1c6b3f;}
+  .form-status.err{color:#a12b2b;}
 </style>
 <script type="application/ld+json">
 {
@@ -384,31 +417,36 @@
   </div>
   <div class="wrap reveal">
     <div class="practice-grid">
-      <div class="practice-card">
+      <a class="practice-card" href="praktik-litigasi.html">
         <span class="mark">Ligitasi</span>
         <h3>Litigasi & Non-Litigasi</h3>
         <p>Pendampingan proses persidangan di berbagai tingkat pengadilan, serta penyelesaian sengketa di luar pengadilan melalui negosiasi dan mediasi.</p>
-      </div>
-      <div class="practice-card">
+              <span class="prac-more">Selengkapnya →</span>
+      </a>
+      <a class="practice-card" href="praktik-ketenagakerjaan.html">
         <span class="mark">Industrial</span>
         <h3>Hukum Ketenagakerjaan</h3>
         <p>Perselisihan hubungan industrial, pemutusan hubungan kerja, hak-hak pekerja, hingga proses di Pengadilan Hubungan Industrial (PHI).</p>
-      </div>
-      <div class="practice-card">
+              <span class="prac-more">Selengkapnya →</span>
+      </a>
+      <a class="practice-card" href="praktik-perdata.html">
         <span class="mark">Keperdataan</span>
         <h3>Perdata Umum & Khusus</h3>
         <p>Sengketa kontrak, wanprestasi, perbuatan melawan hukum, serta perkara pertanahan dan keperdataan lainnya.</p>
-      </div>
-      <div class="practice-card">
+              <span class="prac-more">Selengkapnya →</span>
+      </a>
+      <a class="practice-card" href="praktik-korporasi.html">
         <span class="mark">Bisnis</span>
         <h3>Korporasi</h3>
         <p>Pendampingan legalitas usaha, penyusunan dan tinjauan kontrak bisnis, serta konsultasi hukum korporasi.</p>
-      </div>
-      <div class="practice-card">
+              <span class="prac-more">Selengkapnya →</span>
+      </a>
+      <a class="practice-card" href="praktik-pidana.html">
         <span class="mark">Pidana</span>
         <h3>Hukum Pidana</h3>
         <p>Pendampingan dan pembelaan hukum sejak tahap penyidikan hingga proses persidangan.</p>
-      </div>
+              <span class="prac-more">Selengkapnya →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -486,6 +524,60 @@
         <a class="btn btn-primary" href="https://wa.me/6281399999176" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
       </div>
     </div>
+
+    <div class="form-wrap reveal">
+      <h3>Formulir Konsultasi</h3>
+      <p class="form-sub">Sampaikan gambaran singkat perkara Anda. Kami akan menghubungi kembali melalui email atau WhatsApp.</p>
+
+      <form id="konsultasiForm">
+        <input type="hidden" name="access_key" value="354774c0-44c7-411e-b178-ecc0a085d899">
+        <input type="hidden" name="subject" value="Permohonan Konsultasi dari rfrlawoffice.my.id">
+        <input type="hidden" name="from_name" value="Website RFR Law Office">
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-nama">Nama Lengkap</label>
+            <input id="f-nama" type="text" name="nama" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-kontak">Nomor WhatsApp</label>
+            <input id="f-kontak" type="tel" name="whatsapp" required autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-jenis">Jenis Perkara</label>
+            <select id="f-jenis" name="jenis_perkara" required>
+              <option value="">— Pilih —</option>
+              <option>Ketenagakerjaan / PHI</option>
+              <option>Perdata / Pertanahan</option>
+              <option>Korporasi / Kontrak</option>
+              <option>Pidana</option>
+              <option>Keluarga / Waris</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-uraian">Uraian Singkat Perkara</label>
+            <textarea id="f-uraian" name="uraian" required placeholder="Ceritakan kronologi singkatnya. Mohon jangan mencantumkan data yang sangat sensitif pada tahap ini."></textarea>
+          </div>
+          <div class="field full">
+            <label for="f-tenggat">Apakah Ada Tenggat Waktu? (opsional)</label>
+            <input id="f-tenggat" type="text" name="tenggat" placeholder="Misalnya: sidang 20 Agustus, atau somasi jatuh tempo pekan depan">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Kirim Permohonan</button>
+          <p class="form-note">Pengiriman formulir ini belum menimbulkan hubungan hukum antara Anda dan kami sebagai advokat.</p>
+        </div>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+
   </div>
 </section>
 
@@ -504,6 +596,44 @@
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.09 3.2 5.07 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.02h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 01-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.41a8.18 8.18 0 012.41 5.83c0 4.54-3.7 8.23-8.03 8.23z"/></svg>
   <span class="wa-label">Konsultasi via WhatsApp</span>
 </a>
+
+
+<script>
+(function(){
+  var form = document.getElementById('konsultasiForm');
+  if(!form) return;
+  var statusEl = document.getElementById('formStatus');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type=submit]');
+    var original = btn.textContent;
+    btn.textContent = 'Mengirim...';
+    btn.disabled = true;
+    statusEl.className = 'form-status';
+    try{
+      var res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      var data = await res.json();
+      if(data.success){
+        statusEl.textContent = 'Terima kasih. Permohonan Anda telah kami terima dan akan segera ditindaklanjuti.';
+        statusEl.className = 'form-status show ok';
+        form.reset();
+      } else {
+        throw new Error(data.message || 'gagal');
+      }
+    }catch(err){
+      statusEl.textContent = 'Maaf, pengiriman gagal. Silakan hubungi kami langsung melalui WhatsApp di 0813-9999-9176.';
+      statusEl.className = 'form-status show err';
+    }finally{
+      btn.textContent = original;
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
