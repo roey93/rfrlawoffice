@@ -1,0 +1,17 @@
+{
+  "name": "Kalkulator Hak Pekerja — Roy Fernando, S.H. & Rekan",
+  "short_name": "Hak Pekerja",
+  "description": "Hitung pesangon, hak PHK, pengunduran diri, PPh 21 pesangon, dan kekurangan upah minimum menurut UU 27/2026.",
+  "lang": "id",
+  "id": "/kalkulator-hak-pekerja.html",
+  "start_url": "/kalkulator-hak-pekerja.html",
+  "scope": "/kalkulator-hak-pekerja",
+  "display": "standalone",
+  "background_color": "#0e1b33",
+  "theme_color": "#0e1b33",
+  "icons": [
+    {"src": "/icons-kalkulator/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/icons-kalkulator/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "/icons-kalkulator/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
