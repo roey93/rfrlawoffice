@@ -100,7 +100,9 @@
     transition:background .25s ease, color .25s ease;
   }
   .nav-cta:hover{background:var(--navy-deep); color:var(--ivory);}
-  @media (max-width:760px){ .navlinks{display:none;} }
+  .navlinks a, .brand span{white-space:nowrap;}
+  @media (max-width:1060px){ .navlinks{gap:18px; font-size:13.5px;} .nav-cta{padding:8px 14px;} }
+  @media (max-width:920px){ .navlinks{display:none;} }
 
   /* ---------- ARTICLE HERO ---------- */
   .art-hero{
@@ -300,6 +302,7 @@
       <a href="index.html#tentang">Tentang</a>
       <a href="index.html#praktik" class="active">Bidang Praktik</a>
       <a href="index.html#artikel">Artikel</a>
+      <a href="kalkulator-hak-pekerja.html">Kalkulator</a>
       <a href="company-profile.html">Company Profile</a>
       <a href="index.html#kontak">Kontak</a>
     </div>
