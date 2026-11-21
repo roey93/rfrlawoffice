@@ -266,7 +266,7 @@ footer.sx-foot strong{color:#e8c766;font-weight:600}
     <label>Cara berakhir
       <select id="pkwtMode"><option value="normal">Jangka waktu habis / pekerjaan selesai</option><option value="pengusaha">Diakhiri pengusaha sebelum waktunya</option><option value="pekerja">Diakhiri pekerja sebelum waktunya</option></select>
     </label>
-    <label id="lblSisa" class="hide">Sisa jangka waktu kontrak (bulan)<input type="number" min="0" step="0.5" id="sisa" value="4"></label>
+    <label id="lblSisa" class="hide">Jangka waktu PKWT sesuai kontrak (bulan)<input type="number" min="1" step="1" id="durasi" value="12"><span class="hint" id="akhirKontrak"></span></label>
   </fieldset>
 
   <fieldset><legend>Uang penggantian hak dan uang pisah</legend>
@@ -511,9 +511,21 @@ function calc(){
     const bln=mk.months;
     if(bln<1)notes.push(['warn','Masa kerja kurang dari 1 bulan, belum berhak atas uang kompensasi PKWT.']);
     else add('Uang kompensasi PKWT',`${bln} bln ÷ 12 × upah · ${rz==='baru'?'Pasal 88 jo. ':''}Pasal 16 PP 35/2021`,bln/12*u,'pkwt');
-    const sisa=Math.max(0,+$('sisa').value||0),gr=sisa*u,pg=rz==='baru'?'Pasal 90 UU 27/2026':'Pasal 62 UU 13/2003';
-    if(pm==='pengusaha')add('Ganti rugi sisa kontrak',`${fx(sisa)} bulan × upah · ${pg}`,gr,'pkwt');
-    if(pm==='pekerja'){owed=gr;notes.push(['warn',`Pekerja yang mengakhiri kontrak lebih awal wajib membayar ganti rugi kepada pengusaha sebesar ${fmt(gr)} (${fx(sisa)} bulan × upah, ${pg}). Angka ini tidak dipotong dari total di atas.`]);}
+    const pg=rz==='baru'?'Pasal 90 UU 27/2026':'Pasal 62 UU 13/2003';
+    let sisa=0,sisaTxt='0 bln';
+    const dur=Math.max(1,Math.round(+$('durasi').value||12)),A=new Date($('tMulai').value+'T00:00');
+    const E=new Date(A.getFullYear(),A.getMonth()+dur,1);E.setDate(Math.min(A.getDate(),new Date(E.getFullYear(),E.getMonth()+1,0).getDate()));
+    const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    const tgl=d=>d.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});
+    if(pm!=='normal'){
+      const rs=masaKerja($('tAkhir').value,iso(E));
+      $('akhirKontrak').textContent=`Kontrak seharusnya berakhir ${tgl(E)}.`+(rs?` Sisa ${rs.y*12+rs.m} bulan ${rs.d} hari.`:'');
+      if(rs&&iso(E)>$('tAkhir').value){sisa=rs.y*12+rs.m+rs.d/30;sisaTxt=`${rs.y*12+rs.m} bln${rs.d?' '+rs.d+' hr':''}`;}
+      else notes.push(['warn',`Tanggal berakhir yang diisi sudah sampai atau melewati akhir kontrak (${tgl(E)}), sehingga tidak ada sisa kontrak yang diganti.`]);
+    }
+    const gr=sisa*u;
+    if(pm==='pengusaha'&&gr>0)add('Ganti rugi sisa kontrak',`sisa ${sisaTxt} (s.d. ${tgl(E)}) × upah · ${pg}`,gr,'pkwt');
+    if(pm==='pekerja'&&gr>0){owed=gr;notes.push(['warn',`Pekerja yang mengakhiri kontrak lebih awal wajib membayar ganti rugi kepada pengusaha sebesar ${fmt(gr)} (sisa ${sisaTxt} sampai ${tgl(E)} × upah, ${pg}). Angka ini tidak dipotong dari total di atas.`]);}
     if(rz==='baru')notes.push(['info','Rumus kompensasi masih memakai PP 35/2021 karena PP pelaksana Pasal 88 UU 27/2026 belum terbit.']);
   } else {
     const r=R[rz].find(x=>x[0]===$('alasan').value)||R[rz][0];
@@ -560,7 +572,7 @@ function calc(){
   copyText=`PERHITUNGAN HAK PEKERJA (${SRC[rz]})\nAlasan: ${alasanTxt}\nMasa kerja: ${mk.y} tahun ${mk.m} bulan ${mk.d} hari\nUpah dasar: ${fmt(u)} (${ket})\n\n`+rows.map(r=>`- ${r[0]}: ${fmt(r[2])}\n  (${r[1]})`).join('\n')+`\n\nTOTAL BRUTO: ${fmt(totalVal)}`+(final?`\nEstimasi PPh 21 final: ${fmt(pph)}\nDITERIMA BERSIH: ${fmt(totalVal-pph)}`:'')+(owed?`\nGanti rugi dibayar pekerja: ${fmt(owed)}`:'')+(notes.length?'\n\nCatatan:\n'+notes.map(n=>'- '+n[1]).join('\n'):'')+SIG;
   save();
 }
-const IDS=['tMulai','tAkhir','skema','pokok','tunjangan','harian','satuan','umk','alasan','mikro','pkwtMode','sisa','cuti','pembagi','ongkos','lain','pisah','gugatan','umPes','bayar','txPisah','txUph','txPkwt','sebelum'];
+const IDS=['tMulai','tAkhir','skema','pokok','tunjangan','harian','satuan','umk','alasan','mikro','pkwtMode','durasi','cuti','pembagi','ongkos','lain','pisah','gugatan','umPes','bayar','txPisah','txUph','txPkwt','sebelum'];
 function save(){try{const o={st};IDS.forEach(i=>o[i]=$(i).type==='checkbox'?$(i).checked:$(i).value);localStorage.setItem('kalkPesangon',JSON.stringify(o));}catch(e){}}
 function load(){try{const o=JSON.parse(localStorage.getItem('kalkPesangon')||'null');if(!o)return;Object.assign(st,o.st||{});IDS.forEach(i=>{if(o[i]===undefined||i==='alasan')return;if($(i).type==='checkbox')$(i).checked=o[i];else $(i).value=o[i];});
   fillAlasan(rezimAktif()[0]);if(o.alasan)$('alasan').value=o.alasan;}catch(e){}}
