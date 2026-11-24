@@ -107,7 +107,7 @@ details{border-top:2px solid #c9a227}
 .slip{top:96px;border:1px solid rgba(201,162,39,.35);border-radius:4px}
 .btn{border-radius:2px;background:#0e1b33;color:#fff}.btn:hover{background:#16264a}
 .btn.ghost{background:transparent;color:#0e1b33;border:1px solid #0e1b33}
-.tabs a{border-radius:2px}.tabs a[aria-selected=true]{background:#0e1b33;border-color:#0e1b33;color:#fff}
+.tabs a{border-radius:2px}.tabs a.tab-out{border-style:dashed;color:#8a6d00;font-weight:600}.tabs a[aria-selected=true]{background:#0e1b33;border-color:#0e1b33;color:#fff}
 .seg button{border-radius:2px}.seg button[aria-pressed=true]{background:#0e1b33;border-color:#0e1b33;color:#fff}
 input,select{border-radius:2px;background:#fff}
 input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid #c9a227}
@@ -209,6 +209,7 @@ textarea{font:inherit;font-size:16px;color:var(--ink);border:1px solid var(--lin
 <nav class="tabs" role="tablist">
   <a href="#pesangon" id="tabPes" role="tab">Pesangon dan PHK</a>
   <a href="#upah-minimum" id="tabUm" role="tab">Kekurangan upah minimum</a>
+  <a href="cek-peraturan-perusahaan.html" class="tab-out">Cek Peraturan Perusahaan →</a>
 </nav>
 <div id="install" class="hide" style="margin-top:14px"><button type="button" class="btn" id="installBtn" style="margin:0">Pasang aplikasi di perangkat ini</button></div>
 <div id="iosHint" class="hide" style="margin-top:14px">
