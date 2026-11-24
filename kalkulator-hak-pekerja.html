@@ -170,6 +170,16 @@ footer.sx-foot strong{color:#e8c766;font-weight:600}
   @media (prefers-reduced-motion: reduce){
     .wa-float, .wa-float .wa-label{transition:none;}
   }
+.tl-cta{margin:14px 0 0;font-size:14px;color:var(--mut)}
+.tl-link{font:inherit;font-weight:700;color:var(--red);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:32px}
+.tl-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);border-top:2px solid var(--ink);padding-top:22px}
+.tl-info p{margin:0 0 12px;max-width:62ch}.tl-info ul{margin:0;padding-left:20px;color:var(--mut);font-size:15px}.tl-info li{margin-bottom:6px}
+.tl-form{display:grid;gap:12px;background:var(--pan);border-radius:10px;padding:clamp(16px,2.4vw,26px)}
+.tl-form input,.tl-form select,.tl-form textarea{background:var(--bg)}
+textarea{font:inherit;font-size:16px;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px 10px;width:100%;resize:vertical}
+#tlStatus.ok{color:light-dark(#1b6b3a,#7fd6a0);font-weight:600}#tlStatus.err{color:light-dark(#a3141d,#ff8a8a);font-weight:600}
+#telaahSec{scroll-margin-top:90px}
+@media(max-width:900px){.tl-box{grid-template-columns:minmax(0,1fr)}}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -214,7 +224,7 @@ footer.sx-foot strong{color:#e8c766;font-weight:600}
   <div><b>2. Isi data kerja</b>Tanggal mulai, tanggal PHK, upah, dan alasan PHK.</div>
   <div><b>3. Baca rincian</b>Setiap komponen menunjuk pasalnya. Hasil dapat disalin.</div>
 </div>
-<p class="warnbox"><strong>Perhatian.</strong> Hasil adalah perhitungan minimal menurut peraturan dan bersifat estimasi. Perjanjian kerja, peraturan perusahaan, perjanjian kerja bersama, dan fakta perkara dapat mengubah angkanya. Data yang Anda masukkan diproses di peramban Anda dan tidak dikirim ke server kami.</p>
+<p class="warnbox"><strong>Perhatian.</strong> Hasil adalah perhitungan minimal menurut peraturan dan bersifat estimasi. Perjanjian kerja, peraturan perusahaan, perjanjian kerja bersama, dan fakta perkara dapat mengubah angkanya. Data yang Anda masukkan diproses di peramban Anda dan tidak dikirim ke server kami, kecuali bila Anda sendiri mengajukan permohonan telaah melalui formulir di bagian bawah halaman.</p>
 <noscript><p class="warnbox">Kalkulator ini membutuhkan JavaScript. Aktifkan JavaScript di peramban Anda untuk menggunakannya.</p></noscript>
 </div></header>
 <div id="viewPes">
@@ -301,6 +311,7 @@ footer.sx-foot strong{color:#e8c766;font-weight:600}
   <table class="items"><thead><tr><th>Komponen dan dasar</th><th class="n">Jumlah</th></tr></thead><tbody id="items"></tbody></table>
   <div id="notes"></div>
   <button type="button" class="btn" id="copy">Salin rincian</button><button type="button" class="btn ghost" id="reset">Atur ulang</button>
+  <p class="tl-cta">Perlu kepastian untuk perkara Anda? <button type="button" class="tl-link" data-telaah>Ajukan telaah perhitungan</button></p>
   <p class="hint" id="copyMsg" style="margin:8px 0 0"></p>
 </aside>
 </div></main>
@@ -357,6 +368,7 @@ footer.sx-foot strong{color:#e8c766;font-weight:600}
   <table class="items"><thead><tr><th>Periode</th><th class="n">Selisih</th></tr></thead><tbody id="uItems"></tbody></table>
   <div id="uNotes"></div>
   <button type="button" class="btn" id="uCopy">Salin rincian</button>
+  <p class="tl-cta">Perlu kepastian untuk perkara Anda? <button type="button" class="tl-link" data-telaah>Ajukan telaah perhitungan</button></p>
   <p class="hint" id="uCopyMsg" style="margin:8px 0 0"></p>
 </aside>
 </div></main>
@@ -377,6 +389,39 @@ footer.sx-foot strong{color:#e8c766;font-weight:600}
 </div>
 
 <section class="band disc" style="padding-top:0"><div class="wrap">Angka di atas adalah perhitungan minimal menurut peraturan, dengan estimasi PPh 21 final yang bersifat indikatif, dan belum memperhitungkan ketentuan PK/PP/PKB yang lebih baik. Untuk sengketa konkret, konsultasikan dengan advokat.<br><br><strong style="color:var(--ink)">Roy Fernando, S.H. &amp; Rekan Law Office</strong> · Advokat &amp; Konsultan Hukum · rfrlawoffice.my.id</div></section>
+
+<section class="band" id="telaahSec" style="padding-top:0"><div class="wrap">
+  <div class="tl-box">
+    <div class="tl-info">
+      <h2>Telaah perhitungan hak</h2>
+      <p>Kalkulator menghitung hak minimal menurut peraturan. Angka yang berlaku untuk perkara tertentu masih bergantung pada perjanjian kerja, peraturan perusahaan atau PKB, slip upah, dan kronologi PHK-nya.</p>
+      <p>Melalui layanan telaah, advokat memeriksa dokumen tersebut dan menyusun <b>surat perhitungan hak yang ditandatangani advokat</b>, berisi rincian komponen, dasar hukum, serta catatan atas hal yang berpotensi diperselisihkan. Surat ini dapat digunakan sebagai pegangan dalam perundingan bipartit atau mediasi.</p>
+      <ul>
+        <li>Biaya tetap, disampaikan lebih dahulu sebelum pekerjaan dimulai.</li>
+        <li>Tersedia untuk pekerja maupun perusahaan, setelah dipastikan tidak ada benturan kepentingan.</li>
+        <li>Mengajukan formulir ini belum menimbulkan hubungan advokat dan klien.</li>
+      </ul>
+    </div>
+    <form id="tlForm" class="tl-form" novalidate>
+      <input type="hidden" name="access_key" value="354774c0-44c7-411e-b178-ecc0a085d899">
+      <input type="hidden" name="subject" value="Permohonan Telaah Perhitungan Hak — rfrlawoffice.my.id">
+      <input type="hidden" name="from_name" value="Kalkulator Hak Pekerja">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="row">
+        <label>Nama lengkap<input name="nama" required autocomplete="name"></label>
+        <label>Nomor WhatsApp<input name="whatsapp" type="tel" required autocomplete="tel"></label>
+      </div>
+      <div class="row">
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Anda sebagai<select name="peran"><option>Pekerja</option><option>HRD / perwakilan perusahaan</option><option>Pemilik usaha</option><option>Lainnya</option></select></label>
+      </div>
+      <label>Gambaran singkat perkara<textarea name="uraian" rows="4" required placeholder="Misalnya: di-PHK pada 15 Januari 2026, perusahaan menawarkan Rp40 juta. Mohon jangan mencantumkan data yang sangat sensitif."></textarea></label>
+      <label class="chk"><input type="checkbox" id="tlSertakan" checked> <span>Sertakan rincian perhitungan dari kalkulator di atas</span></label>
+      <button type="submit" class="btn" style="margin-top:4px">Kirim permohonan telaah</button>
+      <p class="hint" id="tlStatus" role="status" style="margin:6px 0 0"></p>
+    </form>
+  </div>
+</div></section>
 
 <section class="sx-band">
   <div class="sx-wrap">
@@ -635,6 +680,21 @@ function calcUM(){
 $('uCopy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(uCopy);$('uCopyMsg').textContent='Rincian tersalin.';}catch(e){$('uCopyMsg').textContent='Browser menolak menyalin otomatis.';}});
 function route(){const um=location.hash==='#upah-minimum';$('viewPes').classList.toggle('hide',um);$('viewUm').classList.toggle('hide',!um);$('tabPes').setAttribute('aria-selected',String(!um));$('tabUm').setAttribute('aria-selected',String(um));}
 addEventListener('hashchange',route);
+
+/* Permohonan telaah perhitungan */
+document.querySelectorAll('[data-telaah]').forEach(b=>b.addEventListener('click',()=>{$('telaahSec').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>$('tlForm').querySelector('[name=nama]').focus({preventScroll:true}),500);}));
+$('tlForm').addEventListener('submit',async e=>{
+  e.preventDefault();const f=e.target,st=$('tlStatus'),btn=f.querySelector('button[type=submit]');
+  if(!f.checkValidity()){st.textContent='Mohon lengkapi nama, nomor WhatsApp, email yang valid, dan gambaran perkara.';st.className='hint err';f.reportValidity&&f.reportValidity();return;}
+  const data=Object.fromEntries(new FormData(f));
+  if($('tlSertakan').checked){const um=location.hash==='#upah-minimum';data.rincian_perhitungan=(um?uCopy:copyText)||'(tidak ada)';data.kalkulator=um?'Kekurangan upah minimum':'Pesangon dan PHK';}
+  const orig=btn.textContent;btn.textContent='Mengirim...';btn.disabled=true;st.className='hint';st.textContent='';
+  try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});const j=await r.json();
+    if(!j.success)throw new Error(j.message||'gagal');
+    st.textContent='Terima kasih, permohonan telaah Anda sudah kami terima. Kami akan menghubungi Anda melalui WhatsApp atau email untuk menyampaikan biaya dan dokumen yang diperlukan.';st.className='hint ok';f.reset();$('tlSertakan').checked=true;
+  }catch(err){st.textContent='Maaf, pengiriman gagal. Silakan hubungi kami langsung melalui WhatsApp di 0813-9999-9176.';st.className='hint err';}
+  finally{btn.textContent=orig;btn.disabled=false;}
+});
 renderP();calcUM();route();
 
 /* PWA: pasang ke layar utama dan tetap bisa dibuka tanpa internet */
